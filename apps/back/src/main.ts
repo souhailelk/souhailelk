@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import {Pool} from 'pg';
 import cors from 'cors';
 import * as path from 'path';
-
+import {Article} from '@souhailelk/myblog.domain'
 
 dotenv.config();
 const app = express()
@@ -19,7 +19,7 @@ const pool = new Pool({
 const getArticles = async () => {
     try {
       return await new Promise(function (resolve, reject) {
-        pool.query("SELECT * FROM article", (error, results) => {
+        pool.query("SELECT * FROM article", (error: any, results: { rows: Article[]; }) => {
           if (error) {
             reject(error);
           }
@@ -39,7 +39,7 @@ const getArticles = async () => {
   const getArticle = async (id:string) => {
     try {
       return await new Promise(function (resolve, reject) {
-        pool.query("SELECT * FROM article WHERE id="+id, (error, results) => {
+        pool.query("SELECT * FROM article WHERE id="+id, (error: any, results: { rows: Article[]; }) => {
           if (error) {
             reject(error);
           }
