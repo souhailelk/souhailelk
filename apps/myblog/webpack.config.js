@@ -4,10 +4,12 @@ const { join } = require('path');
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../dist/apps/myblog-monorepo'),
+    path: join(__dirname, '../../dist/apps/myblog'),
+    publicPath: '/' // <-- add public path here
   },
   devServer: {
     port: 4200,
+    historyApiFallback: true // <-- add fallback here
   },
   plugins: [
     new NxAppWebpackPlugin({

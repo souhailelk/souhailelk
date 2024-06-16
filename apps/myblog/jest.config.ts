@@ -1,11 +1,11 @@
 /* eslint-disable */
 export default {
-  displayName: 'myblog-monorepo',
+  displayName: 'myblog',
   preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
     '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nx/react/babel'] }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/myblog-monorepo',
+  coverageDirectory: '../../coverage/apps/myblog',
 };
