@@ -1,4 +1,4 @@
-class Project {
+export class Project {
     projectName: string;
     projectLink: string;
     description: string;
@@ -12,4 +12,3 @@ class Project {
         this.endDate = endDate;
     }
 }
-export default Project;

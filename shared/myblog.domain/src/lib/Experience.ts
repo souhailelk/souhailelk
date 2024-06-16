@@ -1,4 +1,4 @@
-class Experience {
+export class Experience {
     companyName: string;
     companyLink: string;
     jobTitle: string;
@@ -14,4 +14,3 @@ class Experience {
         this.endDate = endDate;
     }
 }
-export default Experience;

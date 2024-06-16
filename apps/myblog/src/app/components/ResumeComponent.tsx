@@ -1,16 +1,10 @@
-//import Experience from '../models/Experience';
-//import Education from '../models/Education';
-//import Project from '../models/Project';
-//import ResumeModel from '../models/Resume';
-import ResumeName from './ResumeName';
-import Description from './Description';
-import Experiences from './Experiences';
-import Projects from './Projects';
-import Educations from './Educations';
-import Experience from '../models/Experience';
-import Education from '../models/Education';
-import Project from '../models/Project';
-import ResumeModel from '../models/Resume';
+import ResumeName from './ResumeNameComponent';
+import Description from './DescriptionComponent';
+import Experiences from './ExperiencesComponent';
+import Projects from './ProjectsComponents';
+import Educations from './EducationsComponent';
+
+import {Project, Education, Experience, Resume} from '@souhailelk/myblog.domain';
 
 
 function GetResume() {
@@ -35,11 +29,11 @@ function GetResume() {
     const experiences = [experience, experience]
     const projects = [project, project]
     const educations = [education, education]
-    return new ResumeModel("ELKAISSI SOUHAIL", description, projects, experiences, educations);
+    return new Resume("ELKAISSI SOUHAIL", description, projects, experiences, educations);
   }
 
 
-function Resume() {
+function ResumeComponent() {
     const  resume  = GetResume();
     return (
         <div className="flex justify-center overflow-hidden rounded">
@@ -53,4 +47,4 @@ function Resume() {
         </div>
     )
 }
-export default Resume;
+export default ResumeComponent;

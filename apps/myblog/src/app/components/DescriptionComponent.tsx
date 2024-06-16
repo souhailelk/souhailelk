@@ -1,5 +1,4 @@
-import React from 'react'
-function Description(props: {description:string}) {
+function DescriptionComponent(props: {description:string}) {
     return (
         <div className="block px-4 py-2 text-left">
             <div className="font-sans text-sm md:text-xl font-black">Description :</div>
@@ -7,4 +6,4 @@ function Description(props: {description:string}) {
         </div>
     )
 }
-export default Description;
+export default DescriptionComponent;

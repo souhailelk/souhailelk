@@ -1,8 +1,8 @@
-import Education from "./Education";
-import Experience from "./Experience";
-import Project from "./Project";
+import {Project} from './Project'
+import {Experience} from './Experience'
+import {Education} from './Education'
 
-class Resume {
+export class Resume {
     completName: string;
     description: string;
     projects: Project[];
@@ -17,4 +17,3 @@ class Resume {
         this.educations = educations;
     }
 }
-export default Resume;

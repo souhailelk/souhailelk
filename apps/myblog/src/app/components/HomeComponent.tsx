@@ -46,7 +46,7 @@ function MyLinks() {
     );
 }
 
-function Home() {
+function HomeComponent() {
     let title = "Hello, I'm Souhail El Kaissi."
     let text = ["I'm a software engineer and a competitive programming enthusiast.",
         "You will find here my educational and professional background, my personal side projects, and hopefully many articles about diverse subjects."]
@@ -76,4 +76,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default HomeComponent;

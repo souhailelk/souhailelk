@@ -1,6 +1,6 @@
-import Project from "../models/Project";
+import {Project} from '@souhailelk/myblog.domain';
 
-function Projects(props: {projects:Project[]}) {
+function ProjectsComponents(props: {projects:Project[]}) {
     let projectsComponents:JSX.Element[] = []
     props.projects.forEach(project => {
         projectsComponents.push(<div className="block px-4 py-2 font-sans text-left md:m-4">
@@ -19,4 +19,4 @@ function Projects(props: {projects:Project[]}) {
         </div>
     )
 }
-export default Projects;
+export default ProjectsComponents;

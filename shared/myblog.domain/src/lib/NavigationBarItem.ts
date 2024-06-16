@@ -1,4 +1,4 @@
-export default class NavigationBarItem {
+export class NavigationBarItem {
     name: string;
     route: string;
     constructor(name:string, route:string) {

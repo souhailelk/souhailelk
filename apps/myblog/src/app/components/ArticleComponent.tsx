@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 
-import ArticleModel from '../models/Article'
+import {Article} from '@souhailelk/myblog.domain';
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns';
 import ArticlesRepository from '../repositories/ArticlesRepository';
 
 
-function Article() {
+function ArticleComponent() {
   type ArticleParam = { id: string };
   const { id } = useParams<ArticleParam>();
-  const [article, setArticle] = useState<ArticleModel>();
+  const [article, setArticle] = useState<Article>();
   const [loading, setLoading] = useState(true);
   if (!id) {
     return <div>Article id incorrect...</div>;
@@ -54,4 +54,4 @@ function Article() {
   )
 }
 
-export default Article;
+export default ArticleComponent;

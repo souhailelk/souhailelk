@@ -1,4 +1,4 @@
-class Education {
+export class Education {
     schoolName: string;
     schoolLink: string;
     degree: string;
@@ -14,4 +14,3 @@ class Education {
         this.endDate = endDate;
     }
 }
-export default Education;

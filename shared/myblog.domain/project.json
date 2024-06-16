@@ -1,0 +1,19 @@
+{
+  "name": "myblog.domain",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "shared/myblog.domain/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/shared/myblog.domain",
+        "main": "shared/myblog.domain/src/index.ts",
+        "tsConfig": "shared/myblog.domain/tsconfig.lib.json",
+        "assets": ["shared/myblog.domain/*.md"]
+      }
+    }
+  }
+}

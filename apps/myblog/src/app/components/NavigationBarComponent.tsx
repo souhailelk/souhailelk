@@ -1,9 +1,9 @@
+import { NavigationBarItem } from '@souhailelk/myblog.domain';
 import React from 'react'
-import NavigationBarItem from '../models/NavigationBarItem';
 import { Link } from 'react-router-dom';
 
 
-function NavigationBar(props: {navigationBarItems:NavigationBarItem[]}) {
+function NavigationBarComponent(props: {navigationBarItems:NavigationBarItem[]}) {
     const { navigationBarItems } = props;
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     let items: JSX.Element[] = []
@@ -32,4 +32,4 @@ function NavigationBar(props: {navigationBarItems:NavigationBarItem[]}) {
         </nav>
     );
 }
-export default NavigationBar;
+export default NavigationBarComponent;

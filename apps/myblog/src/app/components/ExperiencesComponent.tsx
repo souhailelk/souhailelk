@@ -1,5 +1,6 @@
-import React from 'react'
-function Experiences(props: {experiences:{jobTitle:string,startDate:string,endDate:string,companyLink:string,companyName:string,description:string}[]}) {
+import { Experience } from "@souhailelk/myblog.domain";
+
+function ExperiencesComponent(props: {experiences:Experience[]}) {
     let experiencesComponents: JSX.Element[] = []
     props.experiences.forEach(experience => {
         experiencesComponents.push(<div className="block px-4 py-2 font-sans text-left md:m-4">
@@ -18,4 +19,4 @@ function Experiences(props: {experiences:{jobTitle:string,startDate:string,endDa
         </div>
     )
 }
-export default Experiences;
+export default ExperiencesComponent;

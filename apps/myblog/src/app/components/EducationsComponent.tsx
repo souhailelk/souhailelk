@@ -1,5 +1,6 @@
-import React from 'react'
-function Educations(props: {educations:{degree:string,startDate:string,endDate:string,schoolLink:string,schoolName:string}[]}) {
+import { Education } from "@souhailelk/myblog.domain";
+
+function EducationsComponent(props: {educations:Education[]}) {
     let educationsComponents:JSX.Element[] = []
     props.educations.forEach(education => {
         educationsComponents.push(<div className="block px-4 py-2 font-sans text-left md:m-4">
@@ -18,4 +19,4 @@ function Educations(props: {educations:{degree:string,startDate:string,endDate:s
         </div>
     )
 }
-export default Educations;
+export default EducationsComponent;

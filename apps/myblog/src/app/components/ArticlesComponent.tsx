@@ -1,11 +1,11 @@
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import ArticleCard from './ArticleCard';
-import Article from '../models/Article';
-import ArticleComponent from '../components/Article';
+import ArticleCardComponent from './ArticleCardComponent';
+import {Article} from '@souhailelk/myblog.domain';
+import ArticleComponent from './ArticleComponent';
 import ArticlesRepository from '../repositories/ArticlesRepository';
 
-function Articles() {
+function ArticlesComponent() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -27,9 +27,9 @@ function Articles() {
   if (loading) {
     return <div>Loading...</div>;
   }
-  let articleCards: React.JSX.Element[] = [];
+  let ArticleCardComponents: React.JSX.Element[] = [];
   articles.forEach((article) =>
-    articleCards.push(<ArticleCard article={article} />)
+    ArticleCardComponents.push(<ArticleCardComponent article={article} />)
   );
 
   let ArticlesRoutes: React.JSX.Element[] = [];
@@ -40,7 +40,7 @@ function Articles() {
       </Route>
     )
   );
-  return <div>{articleCards}</div>;
+  return <div>{ArticleCardComponents}</div>;
 }
 
-export default Articles;
+export default ArticlesComponent;

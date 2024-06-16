@@ -1,4 +1,4 @@
-class Article {
+export class Article {
     id: string;
     title: string;
     content: React.JSX.Element;
@@ -12,4 +12,3 @@ class Article {
         this.tags = tags;
     }
 }
-export default Article;

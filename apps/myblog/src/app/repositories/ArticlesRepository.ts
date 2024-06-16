@@ -1,4 +1,4 @@
-import Article from "../models/Article";
+import {Article} from '@souhailelk/myblog.domain';
 import IArticlesRepository from "./IArticlesRepository";
 import axios from 'axios';
 

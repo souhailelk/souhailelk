@@ -1,9 +1,8 @@
-import React from 'react'
 import {
     useLocation,
   } from "react-router-dom";
   
-function Page404() {
+function Page404Component() {
     let location = useLocation();
   
     return (
@@ -16,4 +15,4 @@ function Page404() {
       </div>
     );
   }
-export default Page404;  
+export default Page404Component;  

@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomeComponent from './components/Home';
-import Page404Component from './components/Page404';
-import NavigationBarComponent from './components/NavigationBar';
-import ResumeComponent from './components/Resume';
-import ArticlesComponent from './components/Articles';
-import ArticleComponent from './components/Article';
-import NavigationBarItem from './models/NavigationBarItem';
-
+import HomeComponent from './components/HomeComponent';
+import Page404Component from './components/Page404Component';
+import NavigationBarComponent from './components/NavigationBarComponent';
+import ResumeComponent from './components/ResumeComponent';
+import ArticlesComponent from './components/ArticlesComponent';
+import ArticleComponent from './components/ArticleComponent';
+import { NavigationBarItem } from '@souhailelk/myblog.domain';
 function App() {
   const navigationBarItems: NavigationBarItem[] = [
     new NavigationBarItem('Home', '/'),

@@ -1,9 +1,9 @@
 import React from "react";
-import Article from "../models/Article";
+import {Article} from "@souhailelk/myblog.domain";
 import { format } from 'date-fns';
 import { Link } from "react-router-dom";
 
-function ArticleCard(props: { article: Article; }) {
+function ArticleCardComponent(props: { article: Article; }) {
     const { article } = props;
     const tags: React.JSX.Element[] = []
     article.tags.forEach(tag =>
@@ -11,7 +11,7 @@ function ArticleCard(props: { article: Article; }) {
     return (
             <div className="max-w-sm rounded overflow-hidden shadow-lg m-2" >
                 <Link to={"/Article/" + article.id}>
-                    <img alt="ArticleCard" className="object-cover w-full h-48 hover:shadow-xl" src="https://picsum.photos/600/400/?random" />
+                    <img alt="ArticleCardComponent" className="object-cover w-full h-48 hover:shadow-xl" src="https://picsum.photos/600/400/?random" />
                     <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">{article.title}</div>
                         <div className="flex text-xs tracking-widest break-words">{format(article.date,'MMMM do, yyyy')}</div>
@@ -22,4 +22,4 @@ function ArticleCard(props: { article: Article; }) {
     )
 }
 
-export default ArticleCard;
+export default ArticleCardComponent;
