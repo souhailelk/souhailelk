@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npx nx run-many --target=build --parallel=true",
-    "start": "npx serve -s dist/apps/myblog"
+    "build": "npx nx run-many --target=build --parallel=true"
   },
   "private": true,
   "dependencies": {

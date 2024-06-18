@@ -1,1 +1,1 @@
-web: npx serve -s dist/apps/myblog
+web: /bin/bash ./run.sh
