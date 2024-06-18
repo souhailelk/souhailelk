@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "npx nx run-many --target=build --parallel=true",
-    "start": "npx nx run-many --target=serve --parallel=true"
+    "start": "Serve -s dist/apps/myblog"
   },
   "private": true,
   "dependencies": {
