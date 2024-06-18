@@ -1,1 +1,1 @@
-web: npx nx run myblog:serve
+web: npm start
