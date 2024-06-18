@@ -1,1 +1,1 @@
-web: npm start
+web: npx serve -s dist/apps/myblog
