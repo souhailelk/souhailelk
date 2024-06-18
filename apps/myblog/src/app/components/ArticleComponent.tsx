@@ -47,7 +47,7 @@ function ArticleComponent() {
         <img alt="Article" className="object-cover h-1/2 w-full" src="https://picsum.photos/600/400/?random" />
         <div className="font-bold justify-center text-2xl mm:text-4xl break-words">{article.title}</div>
         <div className="text-sm md:text-lg tracking-widest break-words ml-3 mb-3">published on {format(article.date, 'MMMM do, yyyy H:mm:ss a')}</div>
-        <div className="text-gray-700 text-xs md:text-base leading-relaxed text-justify font-mono break-words px-2 py-6">{article.content}</div>
+        <div className="text-gray-700 text-xs md:text-base leading-relaxed text-justify font-mono break-words px-2 py-6"><div dangerouslySetInnerHTML={{ __html: article.content }} /></div>
         <div className="px-6 py-4">{tags}</div>
       </div>
     </div>
