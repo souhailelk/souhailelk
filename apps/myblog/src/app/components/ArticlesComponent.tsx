@@ -40,7 +40,7 @@ function ArticlesComponent() {
       </Route>
     )
   );
-  return <div>{ArticleCardComponents}</div>;
+  return <div class="flex flex-wrap content-around items-center justify-center">{ArticleCardComponents}</div>;
 }
 
 export default ArticlesComponent;
