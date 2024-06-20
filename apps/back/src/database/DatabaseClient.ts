@@ -1,4 +1,4 @@
-import { Db, MongoClient, ServerApiVersion } from 'mongodb';
+import { Db, MongoClient, ServerApiVersion, MongoClientOptions } from 'mongodb';
 import dotenv from 'dotenv';
 export class DatabaseClient {
   private static client: MongoClient | undefined = undefined;
@@ -12,14 +12,7 @@ export class DatabaseClient {
     if (uri == undefined) {
       throw Error("URI wasn't defined");
     }
-    this.client = new MongoClient(uri, {
-      serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-      },
-    });
-    await this.client.connect();
+    this.client = await MongoClient.connect(uri);
     return this.client.db(this.dbName);
   }
 }
