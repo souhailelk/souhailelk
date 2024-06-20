@@ -14,8 +14,8 @@ class ArticlesRepository implements IArticlesRepository {
       });
 
     const articles: Article[] = [];
-    val.forEach((element: { id: string; title: string; content: React.JSX.Element; date: Date; }) => {
-      articles.push(new Article(element.id, element.title, element.content, element.date, []))
+    val.forEach((element: Article) => {
+      articles.push(element)
     });
    return articles;
   }
