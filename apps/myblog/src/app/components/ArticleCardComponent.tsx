@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 function ArticleCardComponent(props: { article: Article; }) {
     const { article } = props;
     const tags: React.JSX.Element[] = []
-    article.tags.forEach(tag =>
-        tags.push(<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-3">#{tag}</span>));
+    if (article.tags)
+        article.tags.forEach(tag =>
+            tags.push(<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-3">#{tag}</span>));
+    else
+        tags.push(<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-3">#</span>);
     return (
             <div className="max-w-sm rounded overflow-hidden shadow-lg m-2" >
                 <Link to={"/Article/" + article.id}>
