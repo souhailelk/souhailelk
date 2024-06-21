@@ -1,8 +1,7 @@
 import {Article} from '@souhailelk/myblog.domain';
-import IArticlesRepository from "./IArticlesRepository";
 import axios from 'axios';
 
-class ArticlesRepository implements IArticlesRepository {
+class ArticlesRepository {
   private uri:string = 'https://souhailelk-backend-b5a5f23638f7.herokuapp.com/';
   async getAllArticles(): Promise<Article[]> {
     const val = await axios.get(this.uri+"Articles")
