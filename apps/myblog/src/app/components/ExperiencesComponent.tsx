@@ -9,7 +9,7 @@ function ExperiencesComponent(props: {experiences:Experience[]}) {
             <div className="inline-block text-center text-xs md:text-sm md:m-1">-</div>
             <div className="inline-block text-center text-xs md:text-sm md:m-1">{experience.endDate}</div>
             <div className="uppercase text-xs md:text-sm"><a href={experience.companyLink}>{experience.companyName}</a></div>
-            <div className="text-xs md:text-lg m-2">{experience.description}</div>
+            <div className="text-xs md:text-lg m-2"><div dangerouslySetInnerHTML={{ __html: experience.description }} /></div>
         </div>)
     });
     return (
