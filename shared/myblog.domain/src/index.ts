@@ -4,3 +4,4 @@ export * from './lib/Experience';
 export * from './lib/Project';
 export * from './lib/Education';
 export * from './lib/NavigationBarItem';
+export * from './lib/Home';

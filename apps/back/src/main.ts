@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { ArticlesRouter } from './Routers/ArticlesRouter';
 import { ResumeRouter } from './Routers/ResumeRouter';
+import { HomeDataRouter } from './Routers/HomeDataRouter';
 
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors());
 
 app.use('/Articles', ArticlesRouter);
 app.use('/Resume', ResumeRouter);
+app.use('/HomeData', HomeDataRouter);
 
 const port = process.env.PORT || 3333;
 
