@@ -9,7 +9,7 @@ function NavigationBarComponent(props: {navigationBarItems:NavigationBarItem[]})
     let items: JSX.Element[] = []
     navigationBarItems.forEach(navigationBarItem => {
         items.push(
-            <Link key={navigationBarItem.route} to={navigationBarItem.route} className="block lg:inline-block mt-4 mr-4 lg:mt-0 text-xl">
+            <Link key={navigationBarItem.route} to={navigationBarItem.route} className="block lg:inline-block mt-4 mr-4 lg:mt-0 text-xl" onClick={() => setNavbarOpen(false)}>
                 {navigationBarItem.name}
             </Link>
         )
@@ -17,7 +17,7 @@ function NavigationBarComponent(props: {navigationBarItems:NavigationBarItem[]})
 
     return (
         <nav className="flex justify-between flex-wrap text-white bg-black p-3">
-            <span className="items-center mr-6 text-2xl tracking-tight font-semibold"><a href="/">S\E Beta </a></span>
+            <span className="items-center mr-6 text-2xl tracking-tight font-semibold"><a href="/">S\E Beta</a></span>
             <button className="lg:hidden px-3 py-2 border rounded border-white" onClick={() => setNavbarOpen(!navbarOpen)}>
                 <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <title>Menu</title>
