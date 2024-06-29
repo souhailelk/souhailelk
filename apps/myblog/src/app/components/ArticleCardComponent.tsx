@@ -14,7 +14,7 @@ function ArticleCardComponent(props: { article: Article; }) {
     return (
             <div className="max-w-sm rounded overflow-hidden shadow-lg m-2" >
                 <Link to={"/Article/" + article.id}>
-                    <img alt="ArticleCardComponent" className="object-cover w-full h-48 hover:shadow-xl" src="https://picsum.photos/600/400/?random" />
+                    <img alt="ArticleCardComponent" className="object-cover w-full h-48 hover:shadow-xl" src={article.mainImageUrl} />
                     <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">{article.title}</div>
                         <div className="flex text-xs tracking-widest break-words">{format(article.date,'MMMM do, yyyy')}</div>
