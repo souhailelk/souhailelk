@@ -43,7 +43,7 @@ function ArticleComponent() {
   return (
 
     <div className="flex justify-center overflow-hidden rounded">
-      <div className="box-content max-w-screen-lg shadow-lg px-6 py-4 overflow-auto">
+      <div className="w-full h-full max-w-screen-xl shadow-lg px-6 py-4 overflow-auto">
         <img alt="Article" className="object-cover h-1/2 w-full" src={article.mainImageUrl} />
         <div className="font-bold justify-center text-2xl mm:text-4xl break-words">{article.title}</div>
         <div className="text-sm md:text-lg tracking-widest break-words ml-3 mb-3">published on {format(article.date, 'MMMM do, yyyy H:mm:ss a')}</div>
