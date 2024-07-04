@@ -3,26 +3,27 @@
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
 
-@layer base {
-    ul {
-      @apply list-disc list-inside pl-4;
-    }
-    h1 {
-    @apply text-5xl font-extrabold
-    }
-    h2 {
-    @apply text-4xl font-extrabold
-    }
-    h3 {
-      @apply text-3xl font-extrabold
-    }
-    h4 {
-      @apply text-2xl font-extrabold
-    }
-    h5 {
-      @apply text-xl font-extrabold
-    }
-    h6 {
-      @apply text-lg font-extrabold
-    }
-  }
+ul {
+  @apply list-disc list-inside pl-4;
+}
+h1 {
+@apply text-5xl font-extrabold
+}
+h2 {
+@apply text-4xl font-extrabold
+}
+h3 {
+  @apply text-3xl font-extrabold
+}
+h4 {
+  @apply text-2xl font-extrabold
+}
+h5 {
+  @apply text-xl font-extrabold
+}
+h6 {
+  @apply text-lg font-extrabold
+}
+table, td,th {
+  @apply table-fixed border  border-black px-2 py-2 ;
+}
