@@ -7,22 +7,22 @@ ul {
   @apply list-disc list-inside pl-4;
 }
 h1 {
-@apply text-5xl font-extrabold
+@apply text-4xl font-extrabold p-4
 }
 h2 {
-@apply text-4xl font-extrabold
+@apply text-3xl font-extrabold p-3
 }
 h3 {
-  @apply text-3xl font-extrabold
+  @apply text-2xl font-extrabold p-2
 }
 h4 {
-  @apply text-2xl font-extrabold
+  @apply text-xl font-extrabold p-2
 }
 h5 {
-  @apply text-xl font-extrabold
+  @apply text-lg font-extrabold p-1
 }
 h6 {
-  @apply text-lg font-extrabold
+  @apply text-base font-extrabold p-1
 }
 table, td,th {
   @apply table-fixed border  border-black px-2 py-2 ;
