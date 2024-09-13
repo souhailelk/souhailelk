@@ -6,6 +6,7 @@ import ResumeComponent from './components/ResumeComponent';
 import ArticlesComponent from './components/ArticlesComponent';
 import ArticleComponent from './components/ArticleComponent';
 import { NavigationBarItem } from '@souhailelk/myblog.domain';
+import EditArticleComponent from './components/EditArticleComponent';
 function App() {
   const navigationBarItems: NavigationBarItem[] = [
     new NavigationBarItem('Home', '/'),
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/Article/:id" element={<ArticleComponent />} />
+          <Route path="/EditArticle/:id" element={<EditArticleComponent />} />
           <Route path="/Resume" element={<ResumeComponent />} />
           <Route path="/Articles" element={<ArticlesComponent />} />
           <Route path="*" element={<Page404Component />} />
