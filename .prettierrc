@@ -1,3 +1,6 @@
 {
-  "singleQuote": true
+  "printWidth": 999, 
+  "jsxBracketSameLine": true, 
+  "htmlWhitespaceSensitivity": "ignore", 
+  "proseWrap": "never" 
 }
