@@ -8,7 +8,9 @@ import ArticlesRepository from "../repositories/ArticlesRepository";
 import CodeMirror from "@uiw/react-codemirror";
 import { html } from "@codemirror/lang-html";
 import "codemirror/theme/monokai.css";
-
+import NotificationDialog from "./NotificationDialogComponent";
+import { Dialog, DialogContent, DialogContentText, DialogTitle, Button } from '@mui/material';
+import { AxiosError } from "axios";
 const unescapeHtml = (htmlString: string) => {
   const temp = document.createElement("textarea");
   temp.innerHTML = htmlString;
@@ -25,7 +27,18 @@ function EditArticleComponent() {
   const [date, setDate] = useState<Date>(new Date());
   const [content, setContent] = useState<React.JSX.Element>(<div></div>);
   const [contentString, setContentString] = useState<string>("");
+  const [openDialog, setOpenDialog] = useState(false);
+  const [messageDialog, setMessageDialog] = useState<string>('');
+  
+  const handleClickOpen = (msg:string) => {
+    setMessageDialog(msg);
+    setOpenDialog(true);
+  };
 
+  // Function to handle the closing of the dialog
+  const handleClose = () => {
+    setOpenDialog(false);
+  };
   if (!id) {
     return <div>Article id incorrect...</div>;
   }
@@ -77,7 +90,13 @@ function EditArticleComponent() {
     const modifiedArticle = new Article(id, title, jsx, date, image, article.tags);
     console.log("Sending modified article:", modifiedArticle);
     // Uncomment below line when repository is ready
-    await repository.putArticle(modifiedArticle);
+    const res = await repository.putArticle(modifiedArticle);
+    if(res instanceof AxiosError){
+      const err = res as AxiosError;
+      handleClickOpen(err.message);
+      return;
+    }
+    handleClickOpen('saved successfully!')
   };
 
   return (
@@ -127,6 +146,7 @@ function EditArticleComponent() {
           <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Save
           </button>
+          <br/>
         </form>
         </div>
       </div>
@@ -141,6 +161,18 @@ function EditArticleComponent() {
           <div className="px-6 py-4">{tags}</div>
         </div>
       </div>
+      <Dialog open={openDialog} onClose={handleClose}>
+        <DialogTitle>Save status</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {messageDialog}
+          </DialogContentText>
+        </DialogContent>
+        {/* Simple close button inside dialog */}
+        <Button onClick={handleClose} color="primary">
+          Close
+        </Button>
+      </Dialog>
     </div>
   );
 }

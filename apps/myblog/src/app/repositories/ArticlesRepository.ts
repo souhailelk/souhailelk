@@ -1,5 +1,5 @@
 import {Article} from '@souhailelk/myblog.domain';
-import axios from 'axios';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 
 class ArticlesRepository {
   private uri:string = 'http://localhost:3333/';
@@ -28,8 +28,7 @@ class ArticlesRepository {
       });
     return val;
   }
-  async putArticle(article: Article): Promise<Article> {
-    console.log("I'm in putArticle method")
+  async putArticle(article: Article): Promise<AxiosResponse<any, any> | AxiosError> {
     // Ensure that only serializable fields are included
   const sanitizedArticle = {
     id: article.id,
@@ -42,10 +41,11 @@ class ArticlesRepository {
     const reqBody = {article:sanitizedArticle};
     const val = await axios.put(this.uri+"Articles/"+article.id,reqBody)
       .then(response => {
-        return response.data[0]
+        return response
       })
       .catch(error => {
         console.error(error)
+        return error;
       });
     return val;
   }

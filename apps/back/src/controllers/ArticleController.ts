@@ -43,8 +43,12 @@ export const putArticle: RequestHandler = async (req, res) => {
         .status(400)
         .send({ error: 'Article id incorrect', details: '' });
     } 
-    const article = await articleDatabase.putArticle(req.body.article);
-    return res.status(200).json(article);
+    const updateResult = await articleDatabase.putArticle(req.body.article);
+    if (updateResult.modifiedCount > 0) {
+    return res.status(200).json(updateResult);}
+    else res
+    .status(300)
+    .json({ error: 'Article Not Found', details: `${updateResult}` });
   } catch (error) {
     console.error(error);
     return res
