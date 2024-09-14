@@ -1,0 +1,6 @@
+.CodeMirror pre span.cm-tag.cm-h1 {
+    font-family: 'Arial', sans-serif; /* Your desired font */
+    font-weight: bold;
+    font-size: 24px; /* Set specific size */
+    color: #0077cc; /* Example color */
+  }

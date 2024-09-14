@@ -27,3 +27,11 @@ h6 {
 table, td,th {
   @apply table-fixed border  border-black px-2 py-2 ;
 }
+
+
+.CodeMirror pre span.cm-tag.cm-h1 {
+  font-family: 'Arial', sans-serif; /* Your desired font */
+  font-weight: bold;
+  font-size: 24px; /* Set specific size */
+  color: #0077cc; /* Example color */
+}

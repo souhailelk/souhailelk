@@ -7,6 +7,9 @@
   },
   "private": true,
   "dependencies": {
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@uiw/react-codemirror": "^4.23.2",
     "axios": "^1.6.0",
     "codemirror": "^5.65.17",
     "cors": "^2.8.5",

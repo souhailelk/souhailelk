@@ -5,14 +5,9 @@ import { Article } from '@souhailelk/myblog.domain';
 import { useParams } from 'react-router-dom';
 import { format } from 'date-fns';
 import ArticlesRepository from '../repositories/ArticlesRepository';
-import { Controlled as CodeMirror } from 'react-codemirror2';
-// Import CodeMirror core styles
-import 'codemirror/lib/codemirror.css';
-// Import a theme (e.g., material)
-import 'codemirror/theme/material.css';
-// Import XML mode for CodeMirror
-import 'codemirror/mode/xml/xml';
-import 'codemirror/mode/javascript/javascript'; // Import JavaScript mode for JSX highlighting
+import CodeMirror  from '@uiw/react-codemirror';
+import { html } from '@codemirror/lang-html';
+import 'codemirror/theme/monokai.css';
 
 const unescapeHtml = (htmlString:string) => {
   const temp = document.createElement("textarea");
@@ -20,7 +15,7 @@ const unescapeHtml = (htmlString:string) => {
   return temp.value;
 };
 
-function ArticleComponent() {
+function EditArticleComponent() {
   type ArticleParam = { id: string };
   const { id } = useParams<ArticleParam>();
   const [article, setArticle] = useState<Article | null>(null);
@@ -136,17 +131,11 @@ function ArticleComponent() {
           </label>
           <br />
           <CodeMirror
-        value={unescapeHtml(contentString)} // Set the current XML content
-        options={{
-          mode: 'javascript', // Set mode to XML
-          theme: 'material', // You can use other themes as well
-          lineNumbers: true, // Show line numbers in the editor
-          tabSize: 2,
-        }}
-        onChange={(_editor, _data, value) => {
-          setContentString(ReactDOMServer.renderToString(value));
-        }}
-        onBeforeChange={(_editor, _data, value) => {
+        value={unescapeHtml(contentString)}
+        height='1000px'
+        extensions={[html()]}
+        theme='dark'
+        onChange={(value:string) => {
           setContentString(ReactDOMServer.renderToString(value));
         }}
       />
@@ -166,4 +155,4 @@ function ArticleComponent() {
   );
 }
 
-export default ArticleComponent;
+export default EditArticleComponent;
