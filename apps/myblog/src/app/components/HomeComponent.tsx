@@ -50,12 +50,11 @@ function HomeComponent() {
       return <div>Article not found</div>;
     }
     return (
-        <div className="flex flex-wrap justify-center overflow-hidden rounded p-3">
-            <div>
-                <div className="m-auto max-w-full md:max-w-lg rounded overflow-hidden">
+        <div className="p-2">
+                <div className="m-auto max-w-full md:max-w-lg overflow-hidden">
                     <img className="object-cover w-full" alt="Home" src={homeData.bodyImageUrl} />
                 </div>
-                <div className="m-auto max-w-full md:max-w-lg rounded overflow-hidden">
+                <div className="m-auto max-w-full md:max-w-lg overflow-hidden">
                     <div className="px-4 py-2">
                         <p className="font-mono text-xl md:text-2xl font-black">
                             {homeData.title}
@@ -65,8 +64,6 @@ function HomeComponent() {
                     </div>
                     <MyLinks links={homeData.externalLinks} />
                 </div>
-            </div>
-
         </div>
     );
 }
