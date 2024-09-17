@@ -13,6 +13,8 @@ function App() {
     new NavigationBarItem('Resume', '/Resume'),
     new NavigationBarItem('Articles', '/Articles'),
   ];
+
+  const isVisible:boolean = false;
   return (
     <div className="h-screen w-sceen">
       <BrowserRouter>
@@ -20,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/Article/:id" element={<ArticleComponent />} />
-          <Route path="/EditArticle/:id" element={<EditArticleComponent />} />
+          {isVisible?(<Route path="/EditArticle/:id" element={<EditArticleComponent />} />):(<Route path="*" element={<Page404Component />} />)}
           <Route path="/Resume" element={<ResumeComponent />} />
           <Route path="/Articles" element={<ArticlesComponent />} />
           <Route path="*" element={<Page404Component />} />

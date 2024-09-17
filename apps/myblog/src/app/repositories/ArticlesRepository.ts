@@ -2,7 +2,7 @@ import {Article} from '@souhailelk/myblog.domain';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 class ArticlesRepository {
-  private uri:string = 'http://localhost:3333/';
+  private uri:string = 'https://souhailelk-backend-b5a5f23638f7.herokuapp.com/';
   async getAllArticles(): Promise<Article[]> {
     const val = await axios.get(this.uri+"Articles")
       .then(response => {
