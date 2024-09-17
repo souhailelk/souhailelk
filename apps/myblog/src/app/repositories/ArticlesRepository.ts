@@ -1,5 +1,5 @@
 import {Article} from '@souhailelk/myblog.domain';
-import axios from 'axios';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 
 class ArticlesRepository {
   private uri:string = 'https://souhailelk-backend-b5a5f23638f7.herokuapp.com/';
@@ -25,6 +25,27 @@ class ArticlesRepository {
       })
       .catch(error => {
         console.error(error)
+      });
+    return val;
+  }
+  async putArticle(article: Article): Promise<AxiosResponse<any, any> | AxiosError> {
+    // Ensure that only serializable fields are included
+  const sanitizedArticle = {
+    id: article.id,
+    title: article.title,
+    content: typeof article.content === 'string' ? article.content : '', // Ensure content is a string
+    date: article.date, // assuming article.date is a valid date object or string
+    mainImageUrl: article.mainImageUrl,
+    tags: article.tags
+  };
+    const reqBody = {article:sanitizedArticle};
+    const val = await axios.put(this.uri+"Articles/"+article.id,reqBody)
+      .then(response => {
+        return response
+      })
+      .catch(error => {
+        console.error(error)
+        return error;
       });
     return val;
   }

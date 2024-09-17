@@ -3,27 +3,43 @@
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
 
+
+h1 {
+  @apply text-4xl font-bold m-1  text-black 
+}
+h2 {
+  @apply text-3xl font-bold m-1 text-black
+}
+h3 {
+  @apply text-2xl font-bold m-1 text-black
+}
+h4 {
+  @apply text-xl font-bold  m-1 text-black
+}
+h5 {
+  @apply text-lg font-bold  m-1 text-black
+}
+h6 {
+  @apply text-base font-bold m-1 text-black
+}
+
+table, td,th {
+  @apply table-fixed border  border-black px-2 py-2 ;
+}
+
+ul a {
+  color:blue;
+}
+p {
+  @apply p-4;
+}
 ul {
   @apply list-disc list-inside pl-4;
 }
-h1 {
-@apply text-4xl font-extrabold p-4
-}
-h2 {
-@apply text-3xl font-extrabold p-3
-}
-h3 {
-  @apply text-2xl font-extrabold p-2
-}
-h4 {
-  @apply text-xl font-extrabold p-2
-}
-h5 {
-  @apply text-lg font-extrabold p-1
-}
-h6 {
-  @apply text-base font-extrabold p-1
-}
-table, td,th {
-  @apply table-fixed border  border-black px-2 py-2 ;
+
+.CodeMirror pre span.cm-tag.cm-h1 {
+  font-family: 'Arial', sans-serif; /* Your desired font */
+  font-weight: bold;
+  font-size: 24px; /* Set specific size */
+  color: #0077cc; /* Example color */
 }

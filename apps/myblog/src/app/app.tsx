@@ -6,12 +6,15 @@ import ResumeComponent from './components/ResumeComponent';
 import ArticlesComponent from './components/ArticlesComponent';
 import ArticleComponent from './components/ArticleComponent';
 import { NavigationBarItem } from '@souhailelk/myblog.domain';
+import EditArticleComponent from './components/EditArticleComponent';
 function App() {
   const navigationBarItems: NavigationBarItem[] = [
     new NavigationBarItem('Home', '/'),
     new NavigationBarItem('Resume', '/Resume'),
     new NavigationBarItem('Articles', '/Articles'),
   ];
+
+  const isVisible:boolean = false;
   return (
     <div className="h-screen w-sceen">
       <BrowserRouter>
@@ -19,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/Article/:id" element={<ArticleComponent />} />
+          {isVisible?(<Route path="/EditArticle/:id" element={<EditArticleComponent />} />):(<Route path="*" element={<Page404Component />} />)}
           <Route path="/Resume" element={<ResumeComponent />} />
           <Route path="/Articles" element={<ArticlesComponent />} />
           <Route path="*" element={<Page404Component />} />
