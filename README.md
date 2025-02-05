@@ -1,6 +1,6 @@
 ### Souhail EL KAISSI
 
-- 🌱 I’m currently learning Software architecture
+Find me at [souhailelk.com](souhailelk.com)
 
 <!--
 **souhailelk/souhailelk** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
