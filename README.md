@@ -1,6 +1,6 @@
 ### Souhail EL KAISSI
 
-Find me at [souhailelk.com](souhailelk.com)
+Find me at [souhailelk.com](https://www.souhailelk.com)
 
 <!--
 **souhailelk/souhailelk** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
